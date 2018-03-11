@@ -7,7 +7,9 @@
   <body>
     My Twitter App
   <%
-
+    for(int i = 0; i<10;i++) {
+       out.println("<div>Number " + i + "</div>");
+    }
   %>
   </body>
 </html>

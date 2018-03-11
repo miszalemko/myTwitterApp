@@ -13,7 +13,7 @@ import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
 
-@WebServlet(name = "TweetsServlet", value= "/tweets")
+@WebServlet(name = "TweetsServlet", value= "/tweetsServlet")
 public class TweetsServlet extends HttpServlet {
 
     @Override
