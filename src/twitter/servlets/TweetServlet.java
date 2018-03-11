@@ -32,11 +32,13 @@ public class TweetServlet extends HttpServlet{
         //TODO DAO to find Tweet
 
         ServletOutputStream out = resp.getOutputStream();
+        out.println("<html>");
         out.println("<form>");
-        out.println("<input type =\"text\" name=\"messag\" \"value=\"" + foundTweet.getMessage()+"\"/>");
-        out.println("<input type=\"hidden\" name =\"id\" value=\"\"/>");
-        out.println("<input type=\"text\" name =\"username\" value=\"\"/>");
+        out.println("<input type =\"text\" name=\"message\" value=\"" + foundTweet.getMessage()+"\"/>");
+        out.println("<input type=\"hidden\" name =\"id\" value=\"" + foundTweet.getId() + "\"/>");
+        out.println("<input type=\"text\" name =\"username\" value=\"" + foundTweet.getUsername()+ "\"/>");
         out.println("</form>");
+        out.println("</html>");
 
     }
 }
