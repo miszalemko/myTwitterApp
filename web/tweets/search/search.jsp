@@ -11,9 +11,10 @@
     <title>Search</title>
 </head>
 <body>
-    <form>
-        <div>Message <input type="text" name="searchMessage" value = ""></div>
+    <form action ="tweets/search">
         <div>Username <input type="text" name="searchUsername" value = ""></div>
+        <div>Message <input type="text" name="searchMessage" value = ""></div>
+        <div><input type="submit" value="Search"/></div>
     </form>
 </body>
 </html>

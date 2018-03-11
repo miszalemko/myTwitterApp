@@ -8,4 +8,5 @@ public interface TwitterMessageService {
 
     TwitterMessageDto findbyId(Integer id);
     List<TwitterMessageDto> finadAll();
+    List<TwitterMessageDto> findByUserNameAndByMessage(String username,String message);
 }
