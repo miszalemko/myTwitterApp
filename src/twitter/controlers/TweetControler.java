@@ -19,8 +19,8 @@ public class TweetControler extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String idasString = req.getParameter("tweetId");
-        int tweetId = Integer.valueOf(idasString);
+        String idAsString = req.getParameter("tweetId");
+        int tweetId = Integer.valueOf(idAsString);
 
         TwitterMessageService twitterMessageService = new TwitterMessageServiceImpl();
         TwitterMessageDto foundTweet = twitterMessageService.findbyId(tweetId);
