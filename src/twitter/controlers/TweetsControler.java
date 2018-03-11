@@ -1,6 +1,8 @@
 package twitter.controlers;
 
 import twitter.dto.TwitterMessageDto;
+import twitter.service.TwitterMessageService;
+import twitter.service.TwitterMessageServiceImpl;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -17,14 +19,10 @@ public class TweetsControler extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        TwitterMessageDto twitterMessageDto1 = new TwitterMessageDto(1, "First message", "Mike");
-        TwitterMessageDto twitterMessageDto2 = new TwitterMessageDto(2, "Second message", "John");
+        TwitterMessageService twitterMessageService = new TwitterMessageServiceImpl();
+        List<TwitterMessageDto> tweets = twitterMessageService.finadAll();
 
-        List<TwitterMessageDto> tweets = new ArrayList<TwitterMessageDto>();
-        tweets.add(twitterMessageDto1);
-        tweets.add(twitterMessageDto2);
-
-        req.setAttribute("tweetsVodel", tweets);
+        req.setAttribute("tweetsModel", tweets);
 
         RequestDispatcher dispatcher = req.getRequestDispatcher("/tweets/tweets.jsp");
         dispatcher.forward(req, resp);

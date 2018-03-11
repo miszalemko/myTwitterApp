@@ -15,7 +15,7 @@
 <div>List of tweets</div>
 <ul>
     <%
-        List<TwitterMessageDto> tweets = (List<TwitterMessageDto>) request.getAttribute("tweetsModel");
+        List<TwitterMessageDto> tweets = (List<TwitterMessageDto>)request.getAttribute("tweetsModel");
         for (TwitterMessageDto twitterMessageDto : tweets) {
     %>
     <li>

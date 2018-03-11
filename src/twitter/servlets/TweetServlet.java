@@ -12,7 +12,7 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
-@WebServlet(name = "TweetServlet", value = "/tweet")
+@WebServlet(name = "TweetServlet", value = "/tweetServlet")
 public class TweetServlet extends HttpServlet{
 
     @Override
