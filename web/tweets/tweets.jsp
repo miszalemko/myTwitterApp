@@ -13,6 +13,14 @@
 </head>
 <body>
 <div>List of tweets</div>
+
+<%
+    if(request.getAttribute("searchTotalCount")!=null) {
+%>
+<div>Found tweets <%=request.getAttribute("searchTotalCount").toString()%></div>
+<%
+    }
+%>
 <ul>
     <%
         List<TwitterMessageDto> tweets = (List<TwitterMessageDto>)request.getAttribute("tweetsModel");

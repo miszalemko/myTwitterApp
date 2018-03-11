@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet(name = "TweetSearchController",value = "/search")
+@WebServlet(name = "TweetSearchController",value = "/tweets/search")
 public class TweetSearchController extends HttpServlet{
 
     @Override
@@ -24,10 +24,10 @@ public class TweetSearchController extends HttpServlet{
         TwitterMessageService twitterMessageService = new TwitterMessageServiceImpl();
         List<TwitterMessageDto> foundTweets= twitterMessageService.findByUserNameAndByMessage(username,message);
 
-        req.setAttribute("foundTweetsModel", foundTweets);
-        req.setAttribute("searchTotalCount", foundTweets.size());
+        req.setAttribute("tweetsModel", foundTweets);
+        req.setAttribute("searchTotalCount", String.valueOf(foundTweets.size()));
 
-        RequestDispatcher dispatcher = req.getRequestDispatcher("/tweets/search/foundTweets.jsp");
-
+        RequestDispatcher dispatcher = req.getRequestDispatcher("/tweets/tweets.jsp");
+        dispatcher.forward(req,resp);
     }
 }

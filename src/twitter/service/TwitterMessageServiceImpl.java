@@ -41,7 +41,7 @@ public class TwitterMessageServiceImpl implements TwitterMessageService {
 
         List<TwitterMessageDto> foundTweets = new ArrayList<>();
 
-        if(username!=null && username.equals("") && message!=null && message.equals("")) {
+        if(username!=null && !username.equals("") && message!=null && !message.equals("")) {
             for(TwitterMessageDto tweet:allTweets) {
                 if (tweet.getUsername().equals(username) && tweet.getMessage().equals(message)) {
                     foundTweets.add(tweet);
