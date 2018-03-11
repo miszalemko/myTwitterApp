@@ -6,5 +6,8 @@
   </head>
   <body>
     My Twitter App
+  <%
+
+  %>
   </body>
 </html>
