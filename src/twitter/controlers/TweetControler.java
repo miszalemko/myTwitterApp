@@ -24,8 +24,12 @@ public class TweetControler extends HttpServlet {
 
         TwitterMessageService twitterMessageService = new TwitterMessageServiceImpl();
         TwitterMessageDto foundTweet = twitterMessageService.findbyId(tweetId);
-        req.setAttribute("tweet", foundTweet);
 
+        if(foundTweet == null) {
+            req.setAttribute("errorMessage","There is no tweet with id: " + tweetId);
+        }
+
+        req.setAttribute("tweet", foundTweet);
         RequestDispatcher dispatcher = req.getRequestDispatcher("/tweets/tweet.jsp");
         dispatcher.forward(req,resp);
     }
