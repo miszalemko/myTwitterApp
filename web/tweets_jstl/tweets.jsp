@@ -20,6 +20,17 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="/tweets">My twitter</a>
+        </div>
+        <ul class="nav navbar-nav">
+            <li><a href="/addTweet">Add tweet</a></li>
+            <li><a href="/tweetSearchForm">Find tweets</a></li>
+        </ul>
+    </div>
+</nav>
 <h1>List of tweets<h1>
 
 ${param.test}

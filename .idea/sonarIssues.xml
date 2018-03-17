@@ -93,6 +93,26 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/web/tweets_jstl/message/message.jsp">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/web/tweets_jstl/search/search.jsp">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/web/tweets_jstl/tweet.jsp">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/web/tweets_jstl/tweets.jsp">
+          <value>
+            <set />
+          </value>
+        </entry>
       </map>
     </option>
   </component>
