@@ -30,7 +30,7 @@
         </ul>
     </div>
 </nav>
-<h1>Tweet edit page using JSTL</h1>
+<h1>Tweet</h1>
 
 <c:choose>
     <c:when test="${not empty errorMessage}">
