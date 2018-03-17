@@ -24,7 +24,7 @@ public class TweetsControler extends HttpServlet {
 
         req.setAttribute("tweetsModel", tweets);
 
-        RequestDispatcher dispatcher = req.getRequestDispatcher("/tweets/tweets.jsp");
+        RequestDispatcher dispatcher = req.getRequestDispatcher("/tweets_jstl/tweets.jsp");
         dispatcher.forward(req, resp);
     }
 }

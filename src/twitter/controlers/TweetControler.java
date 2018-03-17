@@ -30,7 +30,7 @@ public class TweetControler extends HttpServlet {
         }
 
         req.setAttribute("tweet", foundTweet);
-        RequestDispatcher dispatcher = req.getRequestDispatcher("/tweets/tweet.jsp");
+        RequestDispatcher dispatcher = req.getRequestDispatcher("/tweets_jstl/tweet.jsp");
         dispatcher.forward(req,resp);
     }
 }

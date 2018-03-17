@@ -27,7 +27,7 @@ public class TweetSearchController extends HttpServlet{
         req.setAttribute("tweetsModel", foundTweets);
         req.setAttribute("searchTotalCount", String.valueOf(foundTweets.size()));
 
-        RequestDispatcher dispatcher = req.getRequestDispatcher("/tweets/tweets.jsp");
+        RequestDispatcher dispatcher = req.getRequestDispatcher("/tweets_jstl/tweets.jsp");
         dispatcher.forward(req,resp);
     }
 }
