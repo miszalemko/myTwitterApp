@@ -12,9 +12,15 @@
 <html>
 <head>
     <title>List of tweets</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
-<div>List of tweets</div>
+<h1>List of tweets<h1>
 
 ${param.test}
 
@@ -22,16 +28,27 @@ ${param.test}
     <div>Found tweets ${searchTotalCount}</div>
 </c:if>
 
-<ul>
+<div class="container">
+    <table class="table table-hover">
+    <thead>
+    <tr>
+        <th>Id</th>
+        <th>Title</th>
+        <th>Username</th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
     <c:forEach items="${tweetsModel}" var = "tweet">
-        <li>
-            <div>
-                id: ${tweet.id}
-                message: ${tweet.message}
-                username: ${tweet.username}
-            </div>
-        </li>
+            <tr>
+                <td>${tweet.id}</td>
+                <td>${tweet.title}</td>
+                <td>${tweet.username}</td>
+                <td><a href ="/tweet?tweetId=${tweet.id}">Preview</a></td>
+            </tr>
     </c:forEach>
-</ul>
+    </tbody>
+    </table>
+</div>
 </body>
 </html>

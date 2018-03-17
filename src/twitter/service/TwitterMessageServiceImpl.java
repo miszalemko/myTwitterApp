@@ -11,8 +11,8 @@ public class TwitterMessageServiceImpl implements TwitterMessageService {
 
     @Override
     public TwitterMessageDto findbyId(Integer id) {
-        TwitterMessageDto twitterMessageDto1 = new TwitterMessageDto(1,"First message","Mike");
-        TwitterMessageDto twitterMessageDto2 = new TwitterMessageDto(2,"Second message","John");
+        TwitterMessageDto twitterMessageDto1 = new TwitterMessageDto(1,"First message","Mike","Mike's title");
+        TwitterMessageDto twitterMessageDto2 = new TwitterMessageDto(2,"Second message","John","John's title");
 
         Map<Integer,TwitterMessageDto> tweetsMap = new HashMap<Integer,TwitterMessageDto>();
 
@@ -25,8 +25,8 @@ public class TwitterMessageServiceImpl implements TwitterMessageService {
 
     @Override
     public List<TwitterMessageDto> finadAll() {
-        TwitterMessageDto twitterMessageDto1 = new TwitterMessageDto(1, "First message", "Mike");
-        TwitterMessageDto twitterMessageDto2 = new TwitterMessageDto(2, "Second message", "John");
+        TwitterMessageDto twitterMessageDto1 = new TwitterMessageDto(1, "First message", "Mike","Mike's title");
+        TwitterMessageDto twitterMessageDto2 = new TwitterMessageDto(2, "Second message", "John","John's title");
 
         List<TwitterMessageDto> tweets = new ArrayList<TwitterMessageDto>();
         tweets.add(twitterMessageDto1);
