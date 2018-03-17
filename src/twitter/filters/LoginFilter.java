@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
-@WebFilter(value = {"/tweet","/addTweet"})
+@WebFilter(value = {"/tweet","/addTweet","/myTweets","/tweetSearchForm"})
 public class LoginFilter implements Filter{
 
     @Override
@@ -24,7 +24,9 @@ public class LoginFilter implements Filter{
 
         if(session.getAttribute("username")==null) {
             response.sendRedirect("/login");
+            return;
         }
+        filterChain.doFilter(servletRequest,servletResponse);
     }
 
     @Override

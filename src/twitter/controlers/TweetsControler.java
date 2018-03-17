@@ -11,7 +11,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 
 @WebServlet(name = "TweetsController", value = "/tweets")
@@ -20,7 +19,7 @@ public class TweetsControler extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         TwitterMessageService twitterMessageService = new TwitterMessageServiceImpl();
-        List<TwitterMessageDto> tweets = twitterMessageService.finadAll();
+        List<TwitterMessageDto> tweets = twitterMessageService.findAll();
 
         req.setAttribute("tweetsModel", tweets);
 

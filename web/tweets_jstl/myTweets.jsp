@@ -37,33 +37,31 @@
 </nav>
 <h1>List of tweets<h1>
 
-${param.test}
+    ${param.test}
 
-<c:if test="${not empty searchTotalCount}">
+    <c:if test="${not empty searchTotalCount}">
     <div>Found tweets ${searchTotalCount}</div>
-</c:if>
+    </c:if>
 
-<div class="container">
-    <table class="table table-hover">
-    <thead>
-    <tr>
-        <th>Id</th>
-        <th>Title</th>
-        <th>Username</th>
-        <th></th>
-    </tr>
-    </thead>
-    <tbody>
-    <c:forEach items="${tweetsModel}" var = "tweet">
+    <div class="container">
+        <table class="table table-hover">
+            <thead>
             <tr>
-                <td>${tweet.id}</td>
-                <td>${tweet.title}</td>
-                <td>${tweet.username}</td>
-                <td><a href ="/tweet?tweetId=${tweet.id}">Preview</a></td>
+                <th>Id</th>
+                <th>Title</th>
+                <th></th>
             </tr>
-    </c:forEach>
-    </tbody>
-    </table>
-</div>
+            </thead>
+            <tbody>
+            <c:forEach items="${myTweets}" var = "tweet">
+                <tr>
+                    <td>${tweet.id}</td>
+                    <td>${tweet.title}</td>
+                    <td><a href ="/tweet?tweetId=${tweet.id}">Preview</a></td>
+                </tr>
+            </c:forEach>
+            </tbody>
+        </table>
+    </div>
 </body>
 </html>

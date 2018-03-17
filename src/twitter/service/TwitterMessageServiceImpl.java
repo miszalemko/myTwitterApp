@@ -24,7 +24,7 @@ public class TwitterMessageServiceImpl implements TwitterMessageService {
     }
 
     @Override
-    public List<TwitterMessageDto> finadAll() {
+    public List<TwitterMessageDto> findAll() {
         TwitterMessageDto twitterMessageDto1 = new TwitterMessageDto(1, "First message", "Mike","Mike's title");
         TwitterMessageDto twitterMessageDto2 = new TwitterMessageDto(2, "Second message", "John","John's title");
 
@@ -37,7 +37,7 @@ public class TwitterMessageServiceImpl implements TwitterMessageService {
 
     @Override
     public List<TwitterMessageDto> findByUserNameAndByMessage(String username, String message) {
-        List<TwitterMessageDto> allTweets= finadAll();
+        List<TwitterMessageDto> allTweets= findAll();
 
         List<TwitterMessageDto> foundTweets = new ArrayList<>();
 
@@ -48,6 +48,23 @@ public class TwitterMessageServiceImpl implements TwitterMessageService {
                 }
             }
         }
+        return foundTweets;
+    }
+
+    @Override
+    public List<TwitterMessageDto> findByUser(String username) {
+        List<TwitterMessageDto> allTweets = findAll();
+        List<TwitterMessageDto> foundTweets = new ArrayList<>();
+
+
+        for (TwitterMessageDto singleTweet : allTweets) {
+            if ((username!=null && !username.equals(""))) {
+                if (((singleTweet.getUsername().toLowerCase()).equals(username.toLowerCase()))) {
+                    foundTweets.add(singleTweet);
+                }
+            }
+        }
+
         return foundTweets;
     }
 }
