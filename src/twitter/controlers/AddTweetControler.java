@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
 @WebServlet(name = "AddTweetControler", value = "/addTweet")
@@ -24,11 +25,13 @@ public class AddTweetControler extends HttpServlet{
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String userMessage = req.getParameter("message");
-        String username = req.getParameter("username");
+        String title = req.getParameter("title");
+        HttpSession session = req.getSession();
+        String username = (String)session.getAttribute("username");
 
+        String message = String.format("Dear user %s you've added tweet with title %s and message %s",username,title,userMessage);
         //TODO save tweet to database
 
-        String message = "Dear user " + username + ", you've added tweet with message: \"" + userMessage + "\"";
         req.setAttribute("message", message);
 
         RequestDispatcher dispatcher = req.getRequestDispatcher("/tweets_jstl/message/message.jsp");

@@ -19,9 +19,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
-<c:if test = "${not empty language}">
-    ${language}
-</c:if>
+Chosen language ${language}
 <nav class="navbar navbar-inverse">
     <div class="container-fluid">
         <div class="navbar-header">

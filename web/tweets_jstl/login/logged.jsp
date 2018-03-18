@@ -11,6 +11,5 @@
 <c:if test="${not empty sessionScope.username}">
 </c:if>
 
-<c:if test="${not empty cookie}">
-    ${cookie.lang.value}
-</c:if>
+Chosen language ${language}
+

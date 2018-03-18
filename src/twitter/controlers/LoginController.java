@@ -17,11 +17,6 @@ public class LoginController extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String lang = CookieHelper.getCookieValueByName(req.getCookies(), "lang");
-        if (lang != null && !lang.equals("")) {
-            Language language = Language.valueOf(lang);
-            req.setAttribute("language", language.getDescription());
-        }
         RequestDispatcher dispatcher = req.getRequestDispatcher("/tweets_jstl/login/loginPage.jsp");
         dispatcher.forward(req, resp);
     }
