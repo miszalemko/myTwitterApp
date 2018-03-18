@@ -19,6 +19,9 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
+<c:if test = "${not empty language}">
+    ${language}
+</c:if>
 <nav class="navbar navbar-inverse">
     <div class="container-fluid">
         <div class="navbar-header">
@@ -58,6 +61,7 @@
                        name="password" value=""/>
             </div>
         </div>
+        <input name="backUrl" type="hidden" value="${param.backUrl}"/>
         <div class="form-group">
             <div class="col-sm-offset-2 col-sm-10">
                 <div class="checkbox">

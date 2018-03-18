@@ -1,23 +1,27 @@
 package twitter.controlers;
 
+import twitter.enums.Language;
+import twitter.helpers.CookieHelper;
 import twitter.service.LoginService;
 import twitter.service.LoginServiceImpl;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
+import javax.servlet.http.*;
 import java.io.IOException;
 
-@WebServlet(name="LoginController", value ="/login")
-public class LoginController  extends HttpServlet{
+@WebServlet(name = "LoginController", value = "/login")
+public class LoginController extends HttpServlet {
     LoginService loginService = new LoginServiceImpl();
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        String lang = CookieHelper.getCookieValueByName(req.getCookies(), "lang");
+        if (lang != null && !lang.equals("")) {
+            Language language = Language.valueOf(lang);
+            req.setAttribute("language", language.getDescription());
+        }
         RequestDispatcher dispatcher = req.getRequestDispatcher("/tweets_jstl/login/loginPage.jsp");
         dispatcher.forward(req, resp);
     }
@@ -26,13 +30,18 @@ public class LoginController  extends HttpServlet{
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String username = req.getParameter("username");
         String password = req.getParameter("password");
-        boolean logged = loginService.login(username,password);
-        if(logged) {
+        boolean logged = loginService.login(username, password);
+        if (logged) {
             HttpSession session = req.getSession();
             session.setAttribute("username", username);
-            resp.sendRedirect("/addTweet");
+            String backUrl = req.getParameter("backUrl");
+            if (backUrl != null && !backUrl.equals("")) {
+                resp.sendRedirect(backUrl);
+            } else {
+                resp.sendRedirect("/myTweets");
+            }
         } else {
-            req.setAttribute("errorMessage","Wrong user or password");
+            req.setAttribute("errorMessage", "Wrong user or password");
             RequestDispatcher dispatcher = req.getRequestDispatcher("/tweets_jstl/login/loginPage.jsp");
             dispatcher.forward(req, resp);
         }

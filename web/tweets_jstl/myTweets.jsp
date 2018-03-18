@@ -29,6 +29,18 @@
         <ul class="nav navbar-nav">
             <li><a href="/addTweet">Add tweet</a></li>
             <li><a href="/tweetSearchForm">Find tweets</a></li>
+            <li>
+                <div class="dropdown">
+                    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Language
+                        <span class="caret"></span></button>
+                    <ul class="dropdown-menu">
+                        <li><a href="/language?lang=PL">Polski</a></li>
+                        <li><a href="/language?lang=EN">English</a></li>
+                        <li><a href="/language?lang=UA">Українська</a></li>
+                    </ul>
+                </div>
+            </li>
+
         </ul>
         <ul class="nav navbar-nav navbar-right">
             <li><a href="/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
