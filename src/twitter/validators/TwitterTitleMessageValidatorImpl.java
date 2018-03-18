@@ -15,7 +15,7 @@ public class TwitterTitleMessageValidatorImpl implements Validator {
             return;
         }
         if(title!=null && title.length()>MAX_TITLE_LENGTH) {
-            errors.addFieldError("title","Title size to length must not exceed " + MAX_TITLE_LENGTH);
+            errors.addFieldError("title","Title size length must not exceed " + MAX_TITLE_LENGTH);
         }
     }
 }

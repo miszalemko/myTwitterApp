@@ -53,6 +53,9 @@
                             <input type="text" class="form-control" id="title" placeholder="Enter title"
                                    name="title" value="${tweet.title}"/>
                         </div>
+                        <c:if test="${not empty errors and not empty errors.fieldErrors.title}">
+                            <label class="error"> ${errors.fieldErrors.title}</label>
+                        </c:if>
                     </div>
                     <div class="form-group">
                         <label class="control-label col-sm-2" for="message">Message:</label>
@@ -60,6 +63,9 @@
                             <textarea class="form-control" id="message" placeholder="Enter message"
                                       name="message">${tweet.message}</textarea>
                         </div>
+                        <c:if test="${not empty errors and not empty errors.fieldErrors.message}">
+                            <label class="error"> ${errors.fieldErrors.message}</label>
+                        </c:if>
                     </div>
                     <div class="form-group">
                         <label class="control-label col-sm-2" for="username">Username:</label>
