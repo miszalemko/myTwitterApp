@@ -2,6 +2,6 @@ package twitter.validators;
 
 public interface Validator {
 
-    boolean validate(Object object);
+    void validate(Object object,Errors errors);
 
 }

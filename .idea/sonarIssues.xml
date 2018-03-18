@@ -13,6 +13,11 @@
             <set />
           </value>
         </entry>
+        <entry key="/fragment.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/.idea/sonarIssues.xml">
           <value>
             <set />
@@ -133,7 +138,32 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/twitter/validators/TwitterMessageValidatorImpl.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/twitter/validators/TwitterMessageValidatorImplTest.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/twitter/validators/TwitterTitleMessageValidatorImpl.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/twitter/validators/Validator.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/test/twitter/validators/TwitterMessageValidatorImplTest.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/test/twitter/validators/TwitterTitleMessageValidatorImplTest.java">
           <value>
             <set />
           </value>
