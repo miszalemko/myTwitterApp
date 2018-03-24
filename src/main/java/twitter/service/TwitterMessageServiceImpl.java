@@ -67,4 +67,9 @@ public class TwitterMessageServiceImpl implements TwitterMessageService {
 
         return foundTweets;
     }
+
+    @Override
+    public void save(TwitterMessageDto twitterMessageDto) {
+
+    }
 }

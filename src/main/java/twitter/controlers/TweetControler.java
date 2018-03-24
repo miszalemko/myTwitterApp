@@ -1,6 +1,7 @@
 package twitter.controlers;
 
 import twitter.dto.TwitterMessageDto;
+import twitter.service.TwitterMessageDatabaseServiceImpl;
 import twitter.service.TwitterMessageService;
 import twitter.service.TwitterMessageServiceImpl;
 
@@ -22,7 +23,7 @@ public class TweetControler extends HttpServlet {
         String idAsString = req.getParameter("tweetId");
         int tweetId = Integer.valueOf(idAsString);
 
-        TwitterMessageService twitterMessageService = new TwitterMessageServiceImpl();
+        TwitterMessageService twitterMessageService = new TwitterMessageDatabaseServiceImpl();
         TwitterMessageDto foundTweet = twitterMessageService.findbyId(tweetId);
 
         if(foundTweet == null) {

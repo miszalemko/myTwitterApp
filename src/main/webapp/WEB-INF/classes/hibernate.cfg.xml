@@ -9,7 +9,9 @@
        <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
         <property name="connection.url">jdbc:mysql://localhost:3306/twitter</property>
         <property name="connection.username">root</property>
-        <property name="connection.password"></property>
+        <property name="connection.password">w1w2w3</property>
+        <property name="connection.useSSL">false</property>
+        <property name="connection.serverTimezone">UTC</property>
 
 
         <!-- Connection Pool Size (built-in) -->
@@ -23,8 +25,8 @@
         <!-- Only validate database structure -->
         <property name="hbm2ddl.auto"></property>
 
-        <mapping class="twitter.entity.TwitterMessage"/>
-        <mapping class="twitter.entity.User"/>
+        <mapping class="twitter.entities.Message"/>
+        <mapping class="twitter.entities.User"/>
 
 
     </session-factory>

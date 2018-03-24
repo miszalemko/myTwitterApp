@@ -1,6 +1,7 @@
 package twitter.controlers;
 
 import twitter.dto.TwitterMessageDto;
+import twitter.service.TwitterMessageDatabaseServiceImpl;
 import twitter.service.TwitterMessageService;
 import twitter.service.TwitterMessageServiceImpl;
 
@@ -18,7 +19,7 @@ public class TweetsControler extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        TwitterMessageService twitterMessageService = new TwitterMessageServiceImpl();
+        TwitterMessageService twitterMessageService = new TwitterMessageDatabaseServiceImpl();
         List<TwitterMessageDto> tweets = twitterMessageService.findAll();
 
         req.setAttribute("tweetsModel", tweets);
