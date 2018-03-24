@@ -18,7 +18,10 @@ public class LanguageController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String languageParam = req.getParameter("lang");
-        Language language = Language.valueOf(languageParam);
+        Language language=null;
+        if (languageParam != null && !languageParam.equals("")) {
+             language = Language.valueOf(languageParam);
+        }
 
         if (language != null) {
             Cookie cookie = new Cookie("lang", language.getCountryCode());
